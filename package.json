@@ -1,0 +1,32 @@
+{
+  "name": "contact-manager",
+  "version": "1.0.0",
+  "description": "Contact maanager application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pratham82/Contact-manager.git"
+  },
+  "author": "Prathamesh Mali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pratham82/Contact-manager/issues"
+  },
+  "homepage": "https://github.com/Pratham82/Contact-manager#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
