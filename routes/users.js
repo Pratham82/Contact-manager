@@ -51,7 +51,7 @@ router.post(
       await user.save()
 
       //Sending the token and payload for respective user
-      const payload = { id: user.id }
+      const payload = { user: { id: user.id } }
       const secret = config.get('jwtSecret')
       jwt.sign(payload, secret, { expiresIn: 36000 }, (err, token) => {
         if (err) {
