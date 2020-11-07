@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://prathamesh:pratham123@contactmanager.mn1rn.mongodb.net/ContactManager?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://prathamesh:pratham123@contactmanager.mn1rn.mongodb.net/ContactManager?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
 }
