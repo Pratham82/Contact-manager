@@ -16,12 +16,14 @@ const ContactState = props => {
   const initialState = {
     contacts: [
       {
-        type: 'Personal',
+        id: 1,
+        type: 'personal',
         name: 'Rob Stark',
         email: 'Rob@gmail.com',
         phone: '7841516554',
       },
       {
+        id: 2,
         type: 'professional',
         date: '2020-11-07T16:05:50.841Z',
         name: 'Joey Smith',
@@ -29,6 +31,7 @@ const ContactState = props => {
         phone: '9892634021',
       },
       {
+        id: 3,
         type: 'personal',
         date: '2020-11-07T16:05:50.841Z',
         name: 'Drake Hector',
@@ -36,7 +39,8 @@ const ContactState = props => {
         phone: '1234567890',
       },
       {
-        type: 'personal',
+        id: 4,
+        type: 'professional',
         date: '2020-11-07T16:05:50.841Z',
         name: 'John Snow',
         email: 'john@gmail.com',
@@ -65,7 +69,7 @@ const ContactState = props => {
   return (
     <ContactContext.Provider
       value={{
-        conacts: state.conacts,
+        contacts: state.contacts,
       }}
     >
       {props.children}{' '}
