@@ -1,11 +1,12 @@
 import React from 'react'
+import Contacts from '../contacts/Contacts'
 
-const Home = () => {
-  return (
+const Home = () => (
+  <div className="grid-2">
+    <div>{/*ContactForm*/}</div>
     <div>
-      {' '}
-      <h1>Home</h1>{' '}
+      <Contacts />
     </div>
-  )
-}
+  </div>
+)
 export default Home
