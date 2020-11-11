@@ -12,7 +12,8 @@ export default function Home() {
         <ContactForm />
       </div>
       <div>
-        {contacts && <ContactFilter />}
+        {}
+        <ContactFilter />
         <Contacts />
       </div>
     </div>
