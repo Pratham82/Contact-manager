@@ -13,6 +13,7 @@ import {
   LOGOUT,
   CLEAR_ERRORS,
 } from '../types'
+import setAuthToken from '../../utils/setAuthToken'
 
 const AuthState = props => {
   const initialState = {
@@ -27,7 +28,17 @@ const AuthState = props => {
   // Actions
 
   // Load Users
-  const loadUser = () => console.log('Load user called')
+  const loadUser = async () => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token)
+    }
+    const res = await axios.get('/api/auth')
+    try {
+      dispatch({ type: USER_LOADED, payload: res.data })
+    } catch (err) {
+      dispatch({ type: AUTH_ERROR })
+    }
+  }
 
   // Register Users
   const register = async formData => {
@@ -40,6 +51,7 @@ const AuthState = props => {
     try {
       const res = await axios.post('/api/users', formData, config)
       dispatch({ type: REGISTER_SUCCESS, payload: res.data })
+      loadUser()
     } catch (err) {
       dispatch({ type: REGISTER_FAIL, payload: err.response.data.message })
     }
