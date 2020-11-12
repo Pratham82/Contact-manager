@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React from 'react'
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
