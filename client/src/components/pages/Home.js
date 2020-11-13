@@ -3,11 +3,14 @@ import ContactFilter from '../contacts/ContactFilter'
 import ContactForm from '../contacts/ContactForm'
 import Contacts from '../contacts/Contacts'
 import AuthContext from '../../contexts/auth/authContext'
+import ContactContext from '../../contexts/contact/contactContext'
 
 export default function Home() {
   const authContext = useContext(AuthContext)
+  const contactContext = useContext(ContactContext)
 
   const { loadUser } = authContext
+  const { contacts } = contactContext
 
   useEffect(() => {
     loadUser()
@@ -20,6 +23,7 @@ export default function Home() {
         <ContactForm />
       </div>
       <div>
+        {/*{contacts.length > 0 && <ContactFilter />}*/}
         <ContactFilter />
         <Contacts />
       </div>

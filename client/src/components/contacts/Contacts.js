@@ -14,7 +14,7 @@ const Contacts = () => {
   }, [])
 
   if (contacts !== null && contacts.length === 0 && !loading) {
-    return <h4>PLease Add Contacts</h4>
+    return <h4>Please Add Contacts</h4>
   }
 
   return (
@@ -22,7 +22,7 @@ const Contacts = () => {
       {contacts !== null && !loading ? (
         <TransitionGroup>
           {filtered
-            ? filtered.map(contact => (
+            ? filtered.map((contact) => (
                 <CSSTransition
                   key={contact._id}
                   timeout={500}
@@ -31,7 +31,7 @@ const Contacts = () => {
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ))
-            : contacts.map(contact => (
+            : contacts.map((contact) => (
                 <CSSTransition
                   key={contact._id}
                   timeout={500}
