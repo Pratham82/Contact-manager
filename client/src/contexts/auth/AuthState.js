@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 import AuthContext from './authContext'
 import authReducer from './authReducer'
@@ -29,9 +28,10 @@ const AuthState = props => {
 
   // Load Users
   const loadUser = async () => {
-    if (localStorage.token) {
-      setAuthToken(localStorage.token)
-    }
+    setAuthToken(localStorage.token)
+
+    //    if (localStorage.token) {
+    //   }
     const res = await axios.get('/api/auth')
     try {
       dispatch({ type: USER_LOADED, payload: res.data })
@@ -75,7 +75,7 @@ const AuthState = props => {
   }
 
   // Logout
-  const logout = () => console.log('Load user called')
+  const logout = () => dispatch({ type: LOGOUT })
 
   // Clear Errors
   const clearErrors = () => dispatch({ type: CLEAR_ERRORS })
